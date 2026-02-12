@@ -1,7 +1,7 @@
 # Student Performance Predictor
 
 A machine learning web application that predicts student performance based on academic and personal factors.  
-Built with **Python, Flask, Streamlit, HTML/CSS/JS**, and integrated with a trained ML model.
+Built with **Python, Flask, HTML/CSS/JS**, and integrated with a trained ML model.
 
 ---
 
