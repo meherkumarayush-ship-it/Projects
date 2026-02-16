@@ -1,5 +1,3 @@
-🎓 Student Performance Prediction Web Application
+This repository contains my academic and full-stack development projects built using Python, Flask, Machine Learning, and Web Technologies.
 <br>
-A Full Stack Machine Learning web application that predicts student academic performance based on input features provided by the user.
-<br>
-This project demonstrates integration of Machine Learning model with a Flask backend and responsive frontend UI.
+I am a Computer Science undergraduate focused on Python Full Stack Development and practical implementation of Machine Learning models.
