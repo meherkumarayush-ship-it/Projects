@@ -39,10 +39,10 @@ def predict():
             "ParentalSupport": data["ParentalSupport"]
         }])
 
-        # 🔹 ML Prediction
+        # ML Prediction
         prediction = int(model.predict(input_df)[0])
 
-        # ✅ ADD THIS PART EXACTLY HERE (SAVE DATA)
+        # ADD THIS PART EXACTLY HERE (SAVE DATA)
         save_df = pd.DataFrame([{
             "RollNumber": data["RollNumber"],
             "Gender": data["Gender"],
@@ -56,7 +56,7 @@ def predict():
         save_df.to_csv(CSV_FILE, mode="a", header=False, index=False)
 
         return jsonify({
-            "prediction": prediction,
+            "prediction": int(prediction),
             "attendance_ratio": round(attendance_ratio, 2)
         })
 
@@ -75,7 +75,7 @@ def admin_login():
     return jsonify({"success": False}), 401
 
 
-# 🔐 ADMIN: get all data
+# ADMIN: get all data
 @app.route("/admin/data", methods=["GET"])
 def admin_data():
     if not session.get("admin"):
@@ -88,7 +88,7 @@ def admin_data():
     })
 
 
-# ⬇️ ADMIN: download CSV
+# ADMIN: download CSV
 @app.route("/admin/download", methods=["GET"])
 def download_csv():
     return send_file(CSV_FILE, as_attachment=True)
@@ -98,7 +98,9 @@ def admin_logout():
     session.pop("admin", None)
     return jsonify({"message": "Logged out"})
 
-
+@app.route("/")
+def home():
+    return "Student Performance Prediction Backend Running Successfully!"
 
 if __name__ == "__main__":
     app.run(debug=True)
